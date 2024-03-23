@@ -1,0 +1,55 @@
+<form [formGroup]="bookForm" novalidate >
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Book Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="id" formControlName="id">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="title" formControlName="title">
+            @if (bookForm.controls.title.hasError('required')) {
+              <mat-error>title is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="writer" formControlName="writer">
+            @if (bookForm.controls.writer.hasError('required')) {
+              <mat-error>writer is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="publisher" formControlName="publisher">
+            @if (bookForm.controls.publisher.hasError('required')) {
+              <mat-error>publisher is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="price" formControlName="price">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="content" mat-raised-button color="primary" >Ok</button>
+      <button mat-raised-button color="primary" >Cancle</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

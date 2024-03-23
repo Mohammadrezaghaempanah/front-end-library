@@ -6,13 +6,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-librarianslogin',
-  templateUrl: './librarianslogin.component.html',
-  styleUrl: './librarianslogin.component.scss',
+  selector: 'app-book-details',
+  templateUrl: './book-details.component.html',
+  styleUrl: './book-details.component.scss',
   standalone: true,
   imports: [
     MatInputModule,
@@ -23,14 +22,17 @@ import { Router } from '@angular/router';
     ReactiveFormsModule
   ]
 })
-export class LibrariansloginComponent {
+export class BookDetailsComponent {
   private fb = inject(FormBuilder);
-  loginForm = this.fb.group({
-   username: [null, Validators.required],
-    password: [null, Validators.required],
+  bookForm = this.fb.group({
+    id: null,
+    title: [null, Validators.required],
+    writer: [null, Validators.required],
+    publisher: [null, Validators.required],
+    price: null,
   });
-  router=inject(Router)
+
   onSubmit(): void {
-    this.router.navigateByUrl('/librarians ');
+    alert('Thanks!');
   }
 }
