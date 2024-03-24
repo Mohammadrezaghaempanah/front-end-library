@@ -9,9 +9,9 @@ import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
-  selector: 'app-book-details',
-  templateUrl: './book-details.component.html',
-  styleUrl: './book-details.component.scss',
+  selector: 'app-member-details',
+  templateUrl: './member-details.component.html',
+  styleUrl: './member-details.component.scss',
   standalone: true,
   imports: [
     MatInputModule,
@@ -22,13 +22,11 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule
   ]
 })
-export class BookDetailsComponent {
+export class MemberDetailsComponent {
   private fb = inject(FormBuilder);
-  bookForm = this.fb.group({
+  addressForm = this.fb.group({
     id: null,
-    title: [null, Validators.required],
-    writer: [null, Validators.required],
-    publisher: [null, Validators.required],
-    price: null,
+    fullname: [null, Validators.required],
+    phonnumber: [null, Validators.required],
   });
 }

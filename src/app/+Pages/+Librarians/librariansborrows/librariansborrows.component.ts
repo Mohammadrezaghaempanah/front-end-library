@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './librariansborrows.component.html',
   styleUrl: './librariansborrows.component.scss'
 })
-export class LibrariansborrowsComponent {
+export class LibrariansborrowsComponent  {
 
 }

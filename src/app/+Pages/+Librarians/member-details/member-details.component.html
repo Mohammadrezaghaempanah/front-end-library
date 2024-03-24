@@ -1,0 +1,40 @@
+<form [formGroup]="addressForm" novalidate >
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Member Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Id" formControlName="id">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Full Name" formControlName="fullname">
+            @if (addressForm.controls.fullname.hasError('required')) {
+              <mat-error>Full Name is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Phon Number" formControlName="phonnumber">
+            @if (addressForm.controls.phonnumber.hasError('required')) {
+              <mat-error>Phon Number is <strong>required</strong></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="content" mat-raised-button color="primary" >Ok</button>
+      <button  mat-raised-button color="primary" >Cancle</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
