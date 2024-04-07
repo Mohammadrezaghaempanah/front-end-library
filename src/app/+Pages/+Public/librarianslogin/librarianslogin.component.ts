@@ -31,6 +31,6 @@ export class LibrariansloginComponent {
   });
   router=inject(Router)
   onSubmit(): void {
-    this.router.navigateByUrl('/librarians ');
+    this.router.navigateByUrl('/librarians');
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { Book, BookService } from '../../../+Services/book.service';
 import {MatTableModule} from '@angular/material/table';
 import { BookDetailsComponent } from '../book-details/book-details.component';
