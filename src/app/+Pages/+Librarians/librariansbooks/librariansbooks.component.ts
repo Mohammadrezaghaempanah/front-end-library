@@ -13,6 +13,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './librariansbooks.component.scss'
 })
 export class LibrariansbooksComponent implements OnInit{
+okclick(book:Book) {
+ this.Bookservice.addBooks(book);
+ this.data=this.Bookservice.getBooks();
+ this.ca='list'
+}
   data:Book[]=[];
   ca='list';
   Bookservice=inject(BookService);
@@ -23,4 +28,7 @@ export class LibrariansbooksComponent implements OnInit{
   addclick(){
     this.ca='add';
   }
+ cancleclick(){
+  this.ca='list'
+ }
 }

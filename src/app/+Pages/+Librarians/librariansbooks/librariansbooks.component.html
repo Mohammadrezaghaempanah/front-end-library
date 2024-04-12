@@ -1,5 +1,5 @@
 @if(ca!='list'){
-<app-book-details/>
+<app-book-details (onOk)="okclick($event)" (onCancle)="cancleclick()" />
 }
 @if(ca=='list'){
     <div>

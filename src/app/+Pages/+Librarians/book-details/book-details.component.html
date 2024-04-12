@@ -48,8 +48,8 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button class="content" mat-raised-button color="primary" >Ok</button>
-      <button mat-raised-button color="primary">Cancle</button>
+      <button  (click)="submitok()"  class="content" mat-raised-button color="primary" >Ok</button>
+      <button (click)="onCancle.emit()" mat-raised-button color="primary">Cancle</button>
     </mat-card-actions>
   </mat-card>
 </form>
