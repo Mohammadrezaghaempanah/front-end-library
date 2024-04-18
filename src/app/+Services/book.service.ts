@@ -4,16 +4,34 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BookService {
-private books:Book[]=[
-  {id:1000,title:'c#',writer:'ghaem',publisher:'ahamdi',price:100000},
-  {id:2000,title:'Asp.net',writer:'ghaem',publisher:'mohammadi',price:500000},
-  {id:3000,title:'java',writer:'bayat',publisher:'ahmadi',price:800000}
-]
+private books:Book[]=[];
 getBooks(){
+  this.load();
   return this.books;
 }
 addBooks(Book:Book){
-this.books.push(Book)
+this.books.push(Book);
+this.save();
+}
+editBooks(Book:Book){
+  let result=this.books.filter(b=>b.id==Book.id);
+  if(result.length>0){
+    result[0].title=Book.title;
+    result[0].writer=Book.writer;
+    result[0].publisher=Book.publisher;
+    result[0].price=Book.price;
+    this.save();
+  }
+}
+deleteBooks(Book:Book){
+ this.books=this.books.filter(b=>b.id!==Book.id);
+ this.save();
+}
+private save(){
+  localStorage.setItem('books',JSON.stringify(this.books));
+}
+private load(){
+  this.books=JSON.parse(localStorage.getItem('books')??'[]')
 }
 }
 export interface Book{
